@@ -50,11 +50,10 @@ ingress:
       paths:
       - pathType: Prefix
         path: /
-        backend:
-          service:
-            name: app-front
-            port: 
-              number: 80
+        # backend:
+        #   service:
+        #     port: 
+        #       number: 80
   # tlsClusterIssuer: letsencrypt
   # className: "ingress"
   annotations: 
