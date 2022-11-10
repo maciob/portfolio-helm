@@ -25,6 +25,7 @@ rules:
     resources:
       - secrets
     verbs:
+      - watch
       - create
       - list
   {{- if .Values.rbac.keyAdmin.rules }}
