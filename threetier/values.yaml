@@ -14,7 +14,7 @@ containerPort: 3000
 imagePullSecrets: []
 nameOverride: "app-front"
 fullnameOverride: "app-front"
-configName: "my-secret3"
+configName: "my-secret2"
 
 serviceAccount:
   # Specifies whether a service account should be created
