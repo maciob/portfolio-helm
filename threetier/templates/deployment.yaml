@@ -45,7 +45,7 @@ spec:
           env:
           - name: BACKEND_SERVICE
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: BACKEND_SERVICE
           livenessProbe:

@@ -40,32 +40,32 @@ spec:
           env:
           - name: MONGO_USER
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_USER
           - name: MONGO_PASS
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_PASS
           - name: MONGO_SERVICE_NAME
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_SERVICE_NAME
           - name: MONGO_PORT
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_PORT
           - name: MONGO_COLLECTION
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_COLLECTION
           - name: MONGO_AUTHSOURCE
             valueFrom:
-              configMapKeyRef:
+              secretKeyRef:
                 name: {{ .Values.configName }}
                 key: MONGO_AUTHSOURCE
           livenessProbe:

@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Issuer
 metadata:
   name: letsencrypt
 spec:
@@ -9,7 +9,7 @@ spec:
     preferredChain: ""
     privateKeySecretRef:
       # Secret resource that will be used to store the account's private key.
-      name: one-eye-issuer-account-key
+      name: letsencrypt
     # Add a single challenge solver, HTTP01 using nginx
     solvers:
     - http01:
