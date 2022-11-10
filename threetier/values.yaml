@@ -46,7 +46,7 @@ service:
 ingress:
   enabled: true
   rules:
-  - host: mbekasportfolio.ddns.net
+  - host: mbekas-portfolio.ddns.net
     http:
       paths:
       - pathType: Prefix
@@ -64,13 +64,13 @@ ingress:
     kubernetes.io/tls-acme: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
-    - host: mbekasportfolio.ddns.net
+    - host: mbekas-portfolio.ddns.net
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls:
   - hosts:
-    - mbekasportfolio.ddns.net
+    - mbekas-portfolio.ddns.net
     secretName: portfolio
 
 
