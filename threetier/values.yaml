@@ -40,7 +40,6 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  name: Cluster
   port: 80
 
 ingress:
@@ -53,7 +52,7 @@ ingress:
         path: /
         backend:
           service:
-            name: Cluster
+            name: app-front
             port: 
               number: 80
   # tlsClusterIssuer: letsencrypt
