@@ -18,7 +18,7 @@ service:
   port: 5000
   targetPort: 5000
 
-configName: "my-secret"
+configName: "back-secret"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
