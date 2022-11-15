@@ -15,8 +15,8 @@ roles:
   remote_cluster_client: "true"
   ml: "true"
 
-replicas: 1
-minimumMasterNodes: 1
+replicas: 3
+minimumMasterNodes: 2
 
 esMajorVersion: ""
 
@@ -24,15 +24,12 @@ clusterDeprecationIndexing: "false"
 
 # Allows you to add any config files in /usr/share/elasticsearch/config/
 # such as elasticsearch.yml and log4j2.properties
-#esConfig: {}
+esConfig: {}
 #  elasticsearch.yml: |
 #    key:
 #      nestedkey: value
 #  log4j2.properties: |
 #    key = value
-# esConfig:
-#   elasticsearch.yml: |
-#     xpack.security.enabled: true
 
 esJvmOptions: {}
 #  processors.options: |
@@ -82,10 +79,10 @@ esJavaOpts: "" # example: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "256m"
+    cpu: "1000m"
     memory: "2Gi"
   limits:
-    cpu: "512m"
+    cpu: "1000m"
     memory: "2Gi"
 
 initResources:
@@ -98,10 +95,6 @@ initResources:
   #   memory: "128Mi"
 
 networkHost: "0.0.0.0"
-
-# esConfig:
-#   elasticsearch.yml: |
-#     xpack.security.enabled: true
 
 volumeClaimTemplate:
   accessModes: ["ReadWriteOnce"]
@@ -135,7 +128,7 @@ podSecurityPolicy:
       - emptyDir
 
 persistence:
-  enabled: false
+  enabled: true
   labels:
     # Add default labels for the volumeClaimTemplate of the StatefulSet
     enabled: false
@@ -174,7 +167,7 @@ antiAffinityTopologyKey: "kubernetes.io/hostname"
 
 # Hard means that by default pods will only be scheduled if there are enough nodes for them
 # and that they will never end up on the same node. Setting this to soft will do this "best effort"
-antiAffinity: "soft"
+antiAffinity: "hard"
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
