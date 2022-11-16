@@ -32,7 +32,7 @@ spec:
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          command: ["/bin/sh","-c","export BACKEND_SERVICE && envsubst '$${BACKEND_SERVICE}' < /etc/nginx/templates/nginx.conf.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"]
+          command: ["/bin/sh","-c","export BACKEND_SERVICE && export ADDRESS && envsubst '$${BACKEND_SERVICE} $${ADDRESS}' < /etc/nginx/templates/nginx.conf.template > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"]
           # lifecycle:
           #   postStart:
           #     exec:
