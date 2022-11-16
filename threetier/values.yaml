@@ -58,9 +58,9 @@ ingress:
   # className: "ingress"
   annotations: 
     cert-manager.io/issuer: "letsencrypt"
-    kubernetes.io/ingress.class: nginx
+    kubernetes.io/ingress.class: app-front
     kubernetes.io/tls-acme: "true"
-    acme.cert-manager.io/http01-ingress-class: nginx
+    acme.cert-manager.io/http01-ingress-class: app-front
     acme.cert-manager.io/http01-edit-in-place: "true"
   hosts:
     - host: mbekas-portfolio.ddns.net
