@@ -48,7 +48,6 @@ spec:
               secretKeyRef:
                 name: {{ .Values.configName }}
                 key: BACKEND_SERVICE
-          env:
           - name: ADDRESS
             valueFrom:
               secretKeyRef:
