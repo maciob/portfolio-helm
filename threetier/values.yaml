@@ -63,13 +63,12 @@ ingress:
     kubernetes.io/tls-acme: "true"
     # acme.cert-manager.io/http01-ingress-class: nginx
     acme.cert-manager.io/http01-edit-in-place: "true"
-    manager.io/issue-temporary-certificate: "false"
     # cert-manager.io/issue-temporary-certificate: "false"
   hosts:
     - host: mbekas-portfolio.click
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls:
   - hosts:
     - mbekas-portfolio.click
