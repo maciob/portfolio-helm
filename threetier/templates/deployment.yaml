@@ -48,6 +48,13 @@ spec:
               secretKeyRef:
                 name: {{ .Values.configName }}
                 key: BACKEND_SERVICE
+          env:
+          - name: ADDRESS
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.configName }}
+                key: ADDRESS
+
           livenessProbe:
             httpGet:
               path: /
