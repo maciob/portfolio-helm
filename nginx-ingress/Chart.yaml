@@ -10,8 +10,11 @@ kubeVersion: '>= 1.19.0-0'
 maintainers:
 - email: kubernetes@nginx.com
   name: nginxinc
-name: nginx-ingress
+name: app
 sources:
 - https://github.com/nginxinc/kubernetes-ingress/tree/v2.4.1/deployments/helm-chart
 type: application
 version: 0.15.1
+dependencies:
+- name: threetier
+  version: 0.1.0
