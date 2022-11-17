@@ -57,6 +57,7 @@ ingress:
   # tlsClusterIssuer: letsencrypt
   # className: "ingress"
   annotations: 
+    external-dns.alpha.kubernetes.io/hostname: myservice.example.com 
     cert-manager.io/issuer: "letsencrypt"
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
