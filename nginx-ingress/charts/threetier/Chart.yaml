@@ -28,3 +28,4 @@ dependencies:
   # repository: https://charts.bitnami.com/bitnami
 dependencies:
 - name: cert-manager
+  version: 0.1.0
