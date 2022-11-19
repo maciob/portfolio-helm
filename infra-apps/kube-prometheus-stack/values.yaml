@@ -2693,7 +2693,7 @@ prometheus:
       static_configs:
       - targets:
         - ingress-prometheus.default.svc.cluster.local:80
-    - job_name: ingress
+    - job_name: app
       honor_timestamps: true
       scrape_interval: 1m
       scrape_timeout: 1m
