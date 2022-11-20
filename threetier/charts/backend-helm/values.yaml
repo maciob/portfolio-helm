@@ -6,7 +6,7 @@ image:
   repository: 644435390668.dkr.ecr.eu-west-2.amazonaws.com/mbekasportfolioback
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.5.5"
+  tag: "1.5.6"
 nameOverride: "portfolio-back"
 fullnameOverride: "portfolio-back"
 service:
